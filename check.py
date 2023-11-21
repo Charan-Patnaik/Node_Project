@@ -1,39 +1,15 @@
-def is_valid_parentheses(data):
-    stack = []
-    for char in data:
-        if char in "({[":
-            stack.append(char)
-        elif char in ")}]":
-            if not stack:
-                return False
-            top_element = stack.pop()
-            if char == ')' and top_element != '(':
-                return False
-            elif char == '}' and top_element != '{':
-                return False
-            elif char == ']' and top_element != '[':
-                return False
-    return not stack
-
-s = """
-[
-{
-company_name: (BlackRock)
-ticker; (BLK) stock price:{
-2022-04-03: ($930)
-2022-04-02: ($932)
-}
-},{
-company name: (Apple)
-ticker: (APPL)
-stock price:{
-2022-04-03: ($175)
-2022-04-02; ($178)
-}
-}
-]
-"""
-
-s2 = """[{()(){()()}{()(){()()}}]]"""
-
-print(is_valid_parentheses(s2))
+def print_key1():
+    return "This is Gfg's value"
+ 
+# initializing dictionary
+# check for function name as key
+test_dict = {"Gfg": print_key1, "is" : 5, "best" : 9}
+ 
+# printing original dictionary
+print("The original dictionary is : " + str(test_dict))
+ 
+# calling function using brackets
+res = test_dict['Gfg']()
+ 
+# printing result
+print("The required call result : " + str(res))
